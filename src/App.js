@@ -1,4 +1,3 @@
-
 import {React,useState,useEffect} from "react";
 import Form from "./components/Form";
 import Todolist from "./components/Todolist";
@@ -27,10 +26,37 @@ function App() {
     
   };
   
-  //FilterTodos should be calles when mytodos state change or when filter steta changes
+
+  useEffect( () => {
+    getLocalStorage();
+  },[]);
+  //FilterTodos should be called when mytodos state change or when filter state changes
   useEffect( ()=>{
     filterTodos();
+    saveLocalStorage();
   },[myTodos,filter]);
+
+  
+  
+  //Save to browsers local storage
+  const saveLocalStorage = () => {
+    localStorage.setItem('myTodos', JSON.stringify(myTodos));
+  };
+
+  //get Items from local storage
+
+  const getLocalStorage = () => {
+    //setMyTodos(items);
+    if (localStorage.getItem("myTodos") === null){
+      localStorage.setItem('myTodos', JSON.stringify([]));
+    }
+    else{  
+      let items= JSON.parse(localStorage.getItem('myTodos'));
+      console.log(items);
+      setMyTodos(items);
+    }
+  };
+
 
   return (
     <div className="App">
