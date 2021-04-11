@@ -2,14 +2,14 @@ import React from 'react';
 import Todo from "./Todo";
 
 
-const Todolist = ({myTodos,setMyTodos}) =>{
+const Todolist = ({myTodos,setMyTodos,filterTodo}) =>{
 
     return(
         <div className = "todo-conatiner">
-            { myTodos.length===0 ? <div className = "check-todo">No Todos</div>:<div className = "check-todo">Total todos {myTodos.length} </div>}
+            { filterTodo.length===0 ? <div className = "check-todo">No Todos</div>:<div className = "check-todo">Total todos {filterTodo.length} </div>}
             <ul className = "todo-list">
-            { myTodos.map( (todo) => (
-                <Todo key={todo.id} todo={todo} myTodos={myTodos} setMyTodos={setMyTodos}/>
+            { filterTodo.map( (todo) => (
+                <Todo key={todo.id} todo={todo} myTodos={myTodos} setMyTodos={setMyTodos} filter/>
             ))}
             </ul>
         </div>

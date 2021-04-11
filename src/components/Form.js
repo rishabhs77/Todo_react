@@ -1,6 +1,6 @@
-import {React,useState} from 'react';
+import {React} from 'react';
 
-const Form = ({inputTodo, setInputTodo, myTodos, setMyTodos}) => {
+const Form = ({inputTodo, setInputTodo, myTodos, setMyTodos ,setFilter}) => {
 
     const inputHandler = (e) =>{
         setInputTodo(e.target.value);
@@ -17,6 +17,10 @@ const Form = ({inputTodo, setInputTodo, myTodos, setMyTodos}) => {
         setInputTodo("");
     };
 
+    const filterHandler = (e) => {
+        setFilter(e.target.value);
+    }
+
     return(
         <div>
             <form>
@@ -25,7 +29,7 @@ const Form = ({inputTodo, setInputTodo, myTodos, setMyTodos}) => {
             <i className="fas fa-plus-square"></i>
             </button>
             <div className="select">
-                <select name="todos" className="filter-todo">
+                <select name="todos" className="filter-todo" onChange={filterHandler}>
                     <option value="All">
                         All
                     </option>
