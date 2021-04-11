@@ -47,6 +47,15 @@
     min-width: 30%;
     list-style: none;
   }
+
+  .check-todo{
+    min-height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
+  
   
   .todo {
     margin: 0.5rem;
