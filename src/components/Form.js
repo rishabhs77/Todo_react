@@ -22,9 +22,10 @@ const Form = ({inputTodo, setInputTodo, myTodos, setMyTodos}) => {
             <form>
             <input type='text' onChange={inputHandler} value={inputTodo} className="todo-input"/>
             <button className="todo-button" onClick={submitHandler} type="submit">
+            <i className="fas fa-plus-square"></i>
             </button>
             <div className="select">
-                <select name="todos" className="filter-todos">
+                <select name="todos" className="filter-todo">
                     <option value="All">
                         All
                     </option>
