@@ -9,7 +9,7 @@ const Form = ({inputTodo, setInputTodo, myTodos, setMyTodos ,setFilter}) => {
     const submitHandler = (e) =>{
         e.preventDefault();
         let input=inputTodo.trim();
-        console.log(input);
+        //console.log(input);
         if (input.length!=0){
         let new_todo={id : Math.random()*1000,
             content : inputTodo,
